@@ -1,0 +1,33 @@
+<odoo>
+    <record id="view_report_cobranzas_wizard" model="ir.ui.view">
+        <field name="name">report.collection.wizard.form</field>
+        <field name="model">report.collection.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Generar Reporte de Cobranzas">
+                <group>
+                    <field name="report_type"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="partner_id" attrs="{'invisible': [('report_type', '=', 'morosidad')]}"  widget="many2many_tags"/>
+                    <field name="contract_type_id" attrs="{'invisible': [('report_type', '!=', 'morosidad')]}"  widget="many2many_tags"/>
+                    <field name="file_format"/>
+                    <field name="xlsx_file" invisible="1"/>
+                    <field name="xlsx_file_name" invisible="1"/>
+                </group>
+                <footer>
+                    <button string="Generar Reporte" type="object" name="generate_report" class="btn-primary"/>
+                    <button string="Cancelar" type="object" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_report_cobranzas_wizard" model="ir.actions.act_window">
+        <field name="name">Reportes de Cobranzas</field>
+        <field name="res_model">report.collection.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_report_cobranzas" name="Reportes de Cobranzas" parent="account.menu_finance_reports" sequence="5" action="action_report_cobranzas_wizard"/>
+</odoo>

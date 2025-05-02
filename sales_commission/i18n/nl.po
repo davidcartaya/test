@@ -1,0 +1,475 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* bi_sales_commission_user_partner
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-31 12:34+0000\n"
+"PO-Revision-Date: 2021-03-31 12:34+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bi_sales_commission_user_partner
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.report_commission_template
+msgid "<b>Sales Commission Worksheet Details</b>"
+msgstr "<b> Details werkblad verkoopcommissie </b>"
+
+#. module: bi_sales_commission_user_partner
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.report_commission_template
+msgid "<b>Sales Commisssion Lines</b>"
+msgstr "<b> Verkoopcommissielijnen </b>"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_line__amount
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.report_commission_template
+msgid "Amount"
+msgstr "Bedrag"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_commission_level__commssion_level_code
+msgid "Code"
+msgstr "Code"
+
+#. module: bi_sales_commission_user_partner
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.view_sales_config_inherit_commission
+msgid "Commission Calculation Based On"
+msgstr "Commissieberekening op basis van"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_res_config_settings__commission_calc_on
+msgid "Commission Calculation Based On "
+msgstr "Commissieberekening op basis van"
+
+#. module: bi_sales_commission_user_partner
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.view_sales_config_inherit_commission
+msgid "Commission Configuration"
+msgstr "Commissie configuratie"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_line__commission_date
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.report_commission_template
+msgid "Commission Date"
+msgstr "Commissie Datum"
+
+#. module: bi_sales_commission_user_partner
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.report_commission_template
+msgid "Commission Invoice"
+msgstr "Factuur van de commissie"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.actions.act_window,name:bi_sales_commission_user_partner.action_open_commission
+#: model:ir.ui.menu,name:bi_sales_commission_user_partner.menu_commssion_level
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.commission_level_form_view
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.commission_level_tree_view
+msgid "Commission Level"
+msgstr "Commissieniveau"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_line__state
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_sheet__state
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.report_commission_template
+msgid "Commission Line Paid"
+msgstr "Commissielijn betaald"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.actions.act_window,name:bi_sales_commission_user_partner.action_open_commission_lines
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_res_partner__commission_line_ids
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_res_users__commission_line_ids
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_sheet__commission_line_ids
+#: model:ir.ui.menu,name:bi_sales_commission_user_partner.menu_comm_lines
+#: model:ir.ui.menu,name:bi_sales_commission_user_partner.menu_comm_lines_inv
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.commission_lines_form_view
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.commission_lines_tree_view
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.commission_worksheet_form_view
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.inherit_partner_commission_lines
+msgid "Commission Lines"
+msgstr "Lijnen van de Commissie"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_sheet__commission_paid
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.report_commission_template
+msgid "Commission Paid"
+msgstr "Commissie betaald"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_product_product__is_commission_product
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_product_template__is_commission_product
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_sheet__commission_product_id
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.inherit_view_product_real_estate
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.report_commission_template
+#: model:product.template,name:bi_sales_commission_user_partner.commission_product
+msgid "Commission Product"
+msgstr "Product van de Commissie"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_crm_team__commission_ids
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_product_category__commission_ids
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_product_product__commission_ids
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_product_template__commission_ids
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_res_partner__commission_ids
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_res_users__commission_ids
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.inherit_partner_commission
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.inherit_product_category_commission
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.inherit_sales_team_commission
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.inherit_view_product_real_estate
+msgid "Commission Settings"
+msgstr "Commissie-instellingen"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_line__commission_id
+msgid "Commission Sheet"
+msgstr "Commissieblad"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.actions.act_window,name:bi_sales_commission_user_partner.action_open_commission_worksheet
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.commission_worksheet_form_view
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.commission_worksheet_tree_view
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.view_sale_commission_line_graph
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.view_sale_commission_line_pivot
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.view_sale_commission_sheet_graph
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.view_sale_commission_sheet_pivot
+msgid "Commission Worksheet"
+msgstr "Werkblad van de Commissie"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.ui.menu,name:bi_sales_commission_user_partner.menu_comm_worksheet
+#: model:ir.ui.menu,name:bi_sales_commission_user_partner.menu_comm_worksheet_inv
+msgid "Commission Worksheets"
+msgstr "Werkbladen van de Commissie"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields.selection,name:bi_sales_commission_user_partner.selection__res_config_settings__commission_configuration__invoice
+msgid "Commission based on Invoice"
+msgstr "Commissie op basis van factuur"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields.selection,name:bi_sales_commission_user_partner.selection__res_config_settings__commission_configuration__sale_order
+msgid "Commission based on Sales Order"
+msgstr "Commissie op basis van verkooporder"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.ui.menu,name:bi_sales_commission_user_partner.menu_commission_worksheet
+#: model:ir.ui.menu,name:bi_sales_commission_user_partner.menu_commission_worksheet_invoice
+msgid "Commissions"
+msgstr "Commissies"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_sheet__company_id
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.report_commission_template
+msgid "Company"
+msgstr "Bedrijf"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model,name:bi_sales_commission_user_partner.model_res_config_settings
+msgid "Config Settings"
+msgstr "Configuratie instellingen"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model,name:bi_sales_commission_user_partner.model_res_partner
+msgid "Contact"
+msgstr "Contact"
+
+#. module: bi_sales_commission_user_partner
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.commission_worksheet_form_view
+msgid "Create Invoice"
+msgstr "Maak een factuur"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_commission_level__create_uid
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_commission_settings__create_uid
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_product_commission_level__create_uid
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_line__create_uid
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_sheet__create_uid
+msgid "Created by"
+msgstr "Gemaakt door"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_commission_level__create_date
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_commission_settings__create_date
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_product_commission_level__create_date
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_line__create_date
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_sheet__create_date
+msgid "Created on"
+msgstr "Gemaakt op"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_commission_level__display_name
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_commission_settings__display_name
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_product_commission_level__display_name
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_line__display_name
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_sheet__display_name
+msgid "Display Name"
+msgstr "Weergavenaam"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields.selection,name:bi_sales_commission_user_partner.selection__sale_commission_line__state__draft
+#: model:ir.model.fields.selection,name:bi_sales_commission_user_partner.selection__sale_commission_sheet__state__draft
+msgid "Draft"
+msgstr "Droogte"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_sheet__end_date
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.report_commission_template
+msgid "End Date"
+msgstr "Einddatum"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_commission_level__id
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_commission_settings__id
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_product_commission_level__id
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_line__id
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_sheet__id
+msgid "ID"
+msgstr "ID kaart"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_product_commission_level__invoice_id
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_sheet__invoice_id
+msgid "Invoice"
+msgstr "Factuur"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model,name:bi_sales_commission_user_partner.model_account_move
+msgid "Journal Entries"
+msgstr "Boekingen"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_commission_level____last_update
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_commission_settings____last_update
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_product_commission_level____last_update
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_line____last_update
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_sheet____last_update
+msgid "Last Modified on"
+msgstr "Laatst gewijzigd op"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_commission_level__write_uid
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_commission_settings__write_uid
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_product_commission_level__write_uid
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_line__write_uid
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_sheet__write_uid
+msgid "Last Updated by"
+msgstr "Laatst bijgewerkt door"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_commission_level__write_date
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_commission_settings__write_date
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_product_commission_level__write_date
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_line__write_date
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_sheet__write_date
+msgid "Last Updated on"
+msgstr "Laatst geupdate op"
+
+#. module: bi_sales_commission_user_partner
+#: model:res.groups,name:bi_sales_commission_user_partner.group_commission_user
+msgid "Manage Sales Commission"
+msgstr "Beheer verkoopcommissie"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.actions.server,name:bi_sales_commission_user_partner.commission_monthly_worksheet_cron_ir_actions_server
+#: model:ir.cron,cron_name:bi_sales_commission_user_partner.commission_monthly_worksheet_cron
+#: model:ir.cron,name:bi_sales_commission_user_partner.commission_monthly_worksheet_cron
+msgid "Monthly Commission Worksheet"
+msgstr "Maandelijks werkblad van de Commissie"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_sheet__name
+msgid "Name"
+msgstr "Naam"
+
+#. module: bi_sales_commission_user_partner
+#: code:addons/bi_sales_commission_user_partner/models/commission.py:0
+#, python-format
+msgid "New"
+msgstr "Nieuw"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields.selection,name:bi_sales_commission_user_partner.selection__sale_commission_sheet__state__open
+msgid "Open"
+msgstr "Open"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields.selection,name:bi_sales_commission_user_partner.selection__sale_commission_line__state__paid
+#: model:ir.model.fields.selection,name:bi_sales_commission_user_partner.selection__sale_commission_sheet__state__paid
+msgid "Paid"
+msgstr "Betaald"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields.selection,name:bi_sales_commission_user_partner.selection__res_config_settings__commission_calc_on__partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_commission_settings__partner_id
+msgid "Partners"
+msgstr "Partners"
+
+#. module: bi_sales_commission_user_partner
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.view_sales_config_inherit_commission
+msgid "Pay Commission Based On"
+msgstr "Betaal commissie op basis van"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_res_config_settings__commission_configuration
+msgid "Pay Commission Based On "
+msgstr "Betaal commissie op basis van"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_product_commission_level__payment_id
+msgid "Payment"
+msgstr "Betaling"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model,name:bi_sales_commission_user_partner.model_account_payment
+msgid "Payments"
+msgstr "Betalingen"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_commission_settings__percentage
+msgid "Percentage(%)"
+msgstr "Percentage(%)"
+
+#. module: bi_sales_commission_user_partner
+#: code:addons/bi_sales_commission_user_partner/models/commission.py:0
+#, python-format
+msgid "Please Configure Expense Account in Product"
+msgstr "Configureer een onkostenrekening in het product"
+
+#. module: bi_sales_commission_user_partner
+#: code:addons/bi_sales_commission_user_partner/models/commission.py:0
+#, python-format
+msgid "Please Configure Payable Account in Customer"
+msgstr "Configureer de te betalen rekening in de klant"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_commission_settings__product_id
+#: model:ir.model.fields.selection,name:bi_sales_commission_user_partner.selection__res_config_settings__commission_calc_on__product
+msgid "Product"
+msgstr "Product"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model,name:bi_sales_commission_user_partner.model_product_category
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_commission_settings__product_category_id
+#: model:ir.model.fields.selection,name:bi_sales_commission_user_partner.selection__res_config_settings__commission_calc_on__product_category
+msgid "Product Category"
+msgstr "Productcategorie"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model,name:bi_sales_commission_user_partner.model_product_template
+msgid "Product Template"
+msgstr "Productsjabloon"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_product_commission_level__sale_order_id
+msgid "Sale Order"
+msgstr "Verkoopopdracht"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_commission_level__commssion_level_name
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_commission_settings__commission_level_id
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_product_commission_level__commission_level_id
+msgid "Sales Commission Level"
+msgstr "Verkoopcommissieniveau"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_account_move__product_comm_level_ids
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_account_payment__product_comm_level_ids
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_order__product_comm_level_ids
+msgid "Sales Commission User Setting"
+msgstr "Gebruikersinstelling Verkoopcommissie"
+
+#. module: bi_sales_commission_user_partner
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.inherit_invoice_related_sale_order
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.inherit_payment_commission
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.inherit_sale_order_commission
+msgid "Sales Commission User Settings"
+msgstr "Gebruikersinstellingen Verkoopcommissie"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.actions.report,name:bi_sales_commission_user_partner.report_commission_pdf
+msgid "Sales Commission Worksheet"
+msgstr "Werkblad Verkoopcommissie"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model,name:bi_sales_commission_user_partner.model_sale_order
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_account_move__rel_sale_order
+msgid "Sales Order"
+msgstr "Verkooporder"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_line__sales_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_sheet__sales_partner
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.report_commission_template
+msgid "Sales Partner"
+msgstr "Verkooppartner"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model,name:bi_sales_commission_user_partner.model_crm_team
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_commission_settings__sales_team_id
+#: model:ir.model.fields.selection,name:bi_sales_commission_user_partner.selection__res_config_settings__commission_calc_on__sales_team
+msgid "Sales Team"
+msgstr "Verkoopteam"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_line__source
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.report_commission_template
+msgid "Source Document"
+msgstr "Bron document"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_sheet__start_date
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.report_commission_template
+msgid "Start Date"
+msgstr "Begin datum"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_sale_commission_sheet__total_commission_amt
+#: model_terms:ir.ui.view,arch_db:bi_sales_commission_user_partner.report_commission_template
+msgid "Total Commission Amount"
+msgstr "Totaal commissiebedrag"
+
+#. module: bi_sales_commission_user_partner
+#: model:product.template,uom_name:bi_sales_commission_user_partner.commission_product
+msgid "Units"
+msgstr "Eenheden"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields,field_description:bi_sales_commission_user_partner.field_product_commission_level__user_partner_id
+msgid "Users/Partners"
+msgstr "Gebruikers / partners"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model.fields.selection,name:bi_sales_commission_user_partner.selection__res_config_settings__commission_configuration__payment
+msgid "commission based on Payment"
+msgstr "commissie op basis van betaling"
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model,name:bi_sales_commission_user_partner.model_commission_level
+msgid "commission.level"
+msgstr ""
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model,name:bi_sales_commission_user_partner.model_commission_settings
+msgid "commission.settings"
+msgstr ""
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model,name:bi_sales_commission_user_partner.model_product_commission_level
+msgid "product.commission.level"
+msgstr ""
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model,name:bi_sales_commission_user_partner.model_sale_commission_line
+msgid "sale.commission.line"
+msgstr ""
+
+#. module: bi_sales_commission_user_partner
+#: model:ir.model,name:bi_sales_commission_user_partner.model_sale_commission_sheet
+msgid "sale.commission.sheet"
+msgstr ""

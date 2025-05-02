@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="account_advance_receivable_form" model="ir.ui.view">
+        <field name="name">account.advance.receivable.form.inh</field>
+        <field name="model">account.advanced.payment</field>
+        <field name="inherit_id" ref="3mit_account_advance_payment.account_advance_receivable_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="register_send_mail" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

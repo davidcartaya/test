@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data >
+        <record id="account_inventory_book" model="ir.ui.view">
+       	    <field name="name">Libro de Inventario</field>
+            <field name="model">inventory.book.wizard</field>
+    	    <field name="arch" type="xml">
+    	    	 <form string="Libro de Inventario">
+
+                    <group >
+                        <group>
+                            <field name="date_start" string="Fecha Inicio" required="1"/>
+                            <field name="date_end"  string="Fecha Fin" required="1"/>
+                            <field name="product_type_filter" widget="radio" />
+                            <field name="lot_id" force_save="1"/>
+                            <field name="warehouse_id" force_save="1"/>
+                        </group>
+                        <group>
+                            <field name="category_ids" widget="many2many_tags" readonly="product_type_filter != 'category'"/>
+                            <field name="product_ids" widget="many2many_tags" readonly="product_type_filter != 'product'"/>
+                            <field name="company_id" />
+                        </group>
+                    </group>
+                    <footer>
+                        <button special="cancel" string="Cancelar" class="oe_highlight"/>
+                        <button name="imprimir_pdf" string="Imprimir PDF" type="object" />
+                        <button name="imprimir_xlsx" string="Imprimir XLSX" type="object" />
+                    </footer>
+                </form>
+    	    </field>
+    	</record>
+
+        <record id="action_account_inventory_book" model="ir.actions.act_window">
+        	<field name="name">Libro de Inventario</field>
+        	<field name="res_model">inventory.book.wizard</field>
+        	<field name="view_mode">form</field>
+        	<field name="view_id" ref="account_inventory_book"/>
+        	<field name="target">new</field>
+    	</record>
+
+        <menuitem id="menu_venezuela_reporting" name="Informes de Venezuela" parent="account.menu_finance_reports"/>
+		<menuitem  name="Libro de Inventario"
+                     parent="stock.menu_warehouse_report"
+                     id="account.libro_inventario"
+                     sequence="62"
+                     action="action_account_inventory_book"/>
+    </data>
+</odoo>

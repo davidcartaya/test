@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+        <record id="report_commission_pdf" model="ir.actions.report">
+            <field name="name">Reporte de comisión</field>
+            <field name="model">sale.commission</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">sales_commission.commission_template</field>
+            <field name="report_file">sales_commission.commission_template</field>
+            <field name="binding_model_id" ref="model_sale_commission"/>
+            <field name="binding_type">report</field>
+        </record>
+	</data>
+</odoo>

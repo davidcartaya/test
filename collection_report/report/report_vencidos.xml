@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+    <template id="report_vencidos">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <h2>Reporte Vencidas por Cobrar</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Nombre del Socio</th>
+                            <th>Documento</th>
+                            <th>Estado de pago</th>
+                            <th>Monto de la cuota</th>
+                            <th>Cuotas Pagadas</th>
+                            <th>Cuotas Vencidas</th>
+                            <th>Cuotas Próximas a Vencer</th>
+                            <th>Total Cobrado</th>
+                            <th>Total Por Cobrar Vencido</th>
+                            <th>Total Adeudado</th>  <!-- Nueva columna -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Iterar sobre las órdenes de venta pasadas desde la función -->
+                        <t t-foreach="report_data" t-as="data">
+                            <tr>
+                                <td><t t-esc="data['partner_name']"/></td>
+                                <td><t t-esc="data['identification_id']"/></td>
+                                <td><t t-esc="data['state']"/></td>
+                                <td><t t-esc="data['quote_amount']"/></td>
+                                <td><t t-esc="data['paid_quotes']"/></td>
+                                <td><t t-esc="data['overdue_quotes']"/></td>
+                                <td><t t-esc="data['upcoming_quotes']"/></td>
+                                <td><t t-esc="data['total_collected']"/></td>
+                                <td><t t-esc="data['total_due_overdue']"/></td>
+                                <td><t t-esc="data['total_due']"/></td> 
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+
+    <record id="report_vencidos_pdf" model="ir.actions.report">
+            <field name="name">Reporte Vencidas por Cobrar</field>
+            <field name="model">report.collection.wizard</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">collection_report.report_vencidos</field>
+            <field name="report_file">collection_report.report_vencidos</field>
+            <field name="print_report_name">'Reporte Vencidas por Cobrar - %s' % (object.name).replace('/', '')</field>
+            <field name="binding_model_id" ref="model_report_collection_wizard"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+sale_commission,sale_commission,sales_commission.model_sale_commission,,1,1,1,1
+sale_commission_line,sale_commission_line,sales_commission.model_sale_commission_line,,1,1,1,1
+commission_settings,commission_settings,sales_commission.model_commission_settings,,1,1,1,1
+sale_commission_by_employee,sale_commission_by_employee,sales_commission.model_sale_commission_by_employee,,1,1,1,1
+commission_config_account_line,commission_config_account_line,sales_commission.model_commission_config_account_line,,1,1,1,1

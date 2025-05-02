@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="email_template_initials" model="mail.template">
+            <field name="name">Iniciales</field>
+            <field name="model_id" ref="3mit_account_advance_payment.model_account_advanced_payment"/>
+            <field name="subject">Inicial registrada</field>
+            <field name="email_to">wilbray.fernandez@glik7.com, andrea.marrero@glik7.com, coordinacion.legal@glik7.com</field>
+            <field name="description">Enviado al momento de crear una inicial de clientes</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p>Equipo de Ventas.</p>
+                    <br/>
+                    <p>Se registra inicial de cliente. </p>
+                    <p>CLIENTE: <t t-out="object.partner_id.name or ''"/></p>
+                    <p>DOCUMENTO DE IDENTIDAD: <t t-out="object.x_studio_related_field_KTD2z or ''"/></p>
+                    <p>INICIAL: <t t-out="object.name or ''"/></p>
+                    <p>MONTO: <t t-out="object.amount_advance"/></p>
+                    <p>FECHA: <t t-out="object.date_advance"/></p>
+                    <p>PRODUCTO: <t t-out="object.x_studio_many2one_field_EGlw3.name"/></p>
+                    <p>VENDEDOR(A) <t t-out="object.x_studio_vendedora"/></p>
+                    <br/>
+                    <p>Para su validación.</p>
+                    <br/>
+                    <p>Administrador</p>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+    </data>
+</odoo>

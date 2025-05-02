@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Template QWeb para el reporte de Morosidad -->
+        <template id="report_morosidad">
+            <t t-call="web.basic_layout">
+                <div class="page">
+                    <h2>Reporte de Morosidad por Tipo de Contrato</h2>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Tipo de Contrato</th>
+                                <th>Contratos Activos</th>
+                                <th>Clientes Morosos</th>
+                                <th>Cuotas Vencidas 1-30 días</th>
+                                <th>Cuotas Vencidas 31-60 días</th>
+                                <th>Cuotas Vencidas 61-90 días</th>
+                                <th>Cuotas Vencidas 91-120 días</th>
+                                <th>Total Adeudado</th>
+                                <th>Porcentaje de Morosidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Recorremos los datos del reporte -->
+                            <t t-foreach="report_data.items()" t-as="contract">
+                                <tr>
+                                    <td><t t-esc="contract[0]"/></td>
+                                    <td><t t-esc="contract[1]['active_contracts']"/></td>
+                                    <td><t t-esc="contract[1]['overdue_contracts']"/></td>
+                                    <td><t t-esc="contract[1]['overdue_1_30_days']"/></td>
+                                    <td><t t-esc="contract[1]['overdue_31_60_days']"/></td>
+                                    <td><t t-esc="contract[1]['overdue_61_90_days']"/></td>
+                                    <td><t t-esc="contract[1]['overdue_91_120_days']"/></td>
+                                    <td><t t-esc="contract[1]['total_due']"/></td>
+                                    <td><t t-esc="contract[1]['morosity_percentage']"/></td>
+                                </tr>
+                            </t>
+
+                        </tbody>
+                        <tfoot>
+                    <!-- Fila con los totales globales -->
+                        <tr>
+                            <td><strong>Totales</strong></td>
+                            <td><t t-esc="global_totals['active_contracts']"/></td>
+                            <td><t t-esc="global_totals['overdue_contracts']"/></td>
+                            <td><t t-esc="global_totals['overdue_1_30_days']"/></td>
+                            <td><t t-esc="global_totals['overdue_31_60_days']"/></td>
+                            <td><t t-esc="global_totals['overdue_61_90_days']"/></td>
+                            <td><t t-esc="global_totals['overdue_91_120_days']"/></td>
+                            <td><t t-esc="global_totals['total_due']"/></td>
+                            <td></td>
+                        </tr>
+                </tfoot>
+                    </table>
+                </div>
+            </t>
+        </template>
+
+
+        <record id="report_morosidad_pdf" model="ir.actions.report">
+            <field name="name">Reporte de Morosidad por Tipo de Contrato</field>
+            <field name="model">report.collection.wizard</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">collection_report.report_morosidad</field>
+            <field name="report_file">collection_report.report_morosidad</field>
+            <field name="print_report_name">'Reporte de Morosidad por Tipo de Contrato - %s' %
+                (object.name).replace('/', '')</field>
+            <field name="binding_model_id" ref="model_report_collection_wizard" />
+            <field name="binding_type">report</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Vista de árbol de la Comisión -->
+        <record id="commission_worksheet_tree_view" model="ir.ui.view">
+            <field name="name">sale.commission.tree</field>
+            <field name="model">sale.commission</field>
+            <field name="arch" type="xml">
+                <tree string="Comisiones" create="false" edit="false">
+                    <field name="name"/>
+                    <field name="employee_ids" widget="many2many_tags"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="total_commission_amt"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista de formulario de la Comisión -->
+        <record id="commission_worksheet_form_view" model="ir.ui.view">
+            <field name="name">sale.commission.form</field>
+            <field name="model">sale.commission</field>
+            <field name="arch" type="xml">
+                <form string="Comisión" create="false">
+                    <header>
+                        <button name="create_invoice_commission" type="object" string="Crear Factura" class="btn-primary" attrs="{'invisible': [('state','!=', 'draft')]}"/>
+                        
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_view_invoice_ids" type="object" string="Facturas" class="oe_stat_button" icon="fa-pencil-square-o" attrs="{'invisible': [('invoice_count','&lt;=', 0)]}">
+                                <field name="invoice_count" widget="statinfo" string="Facturas"/>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <h2>
+                                <field name="name" readonly="1"/>
+                            </h2>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="employee_ids" widget="many2many_tags" attrs="{'readonly': [('state','!=', 'draft')]}"/>
+                                <field name="start_date" attrs="{'readonly': [('state','!=', 'draft')]}"/>
+                            </group>
+                            <group>
+                                <field name="company_id" attrs="{'readonly': [('state','!=', 'draft')]}"/>
+                                <field name="total_commission_amt" attrs="{'readonly': [('state','!=', 'draft')]}"/>
+                                <field name="invoice_ids" widget="many2many_tags" invisible="1" attrs="{'readonly': [('state','!=', 'draft')]}"/>
+                                <field name="commission_paid" invisible="1" attrs="{'readonly': [('state','!=', 'draft')]}"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Empleados">
+                                <field name="employee_commission_ids" attrs="{'readonly': [('state','!=', 'draft')]}">
+                                    <tree>
+                                        <field name="employee_id"/>
+                                        <field name="amount"/>
+                                        <field name="commission_id" invisible="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Productos">
+                                <field name="commission_line_ids" attrs="{'readonly': [('state','!=', 'draft')]}">
+                                    <tree>
+                                        <field name="product_id"/>
+                                        <field name="quantity"/>
+                                        <field name="price_unit"/>
+                                        <field name="amount"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Vista de gráfico para la Comisión -->
+        <record id="view_sale_commission_sheet_graph" model="ir.ui.view">
+            <field name="name">sale.commission.graph</field>
+            <field name="model">sale.commission</field>
+            <field name="arch" type="xml">
+                <graph string="Comisión">
+                    <field name="employee_ids"/>
+                    <field name="total_commission_amt" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <!-- Vista de pivot para la Comisión -->
+        <record id="view_sale_commission_sheet_pivot" model="ir.ui.view" >
+            <field name="name">sale.commission.pivot</field>
+            <field name="model">sale.commission</field>
+            <field name="arch" type="xml">
+                <pivot string="Hoja de Comisión">
+                    <field name="start_date" type="row"/>
+                    <field name="total_commission_amt" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
+        <!-- Acción para abrir la Comisión -->
+        <record id="action_open_commission_worksheet" model="ir.actions.act_window">
+            <field name="name">Comisiones</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.commission</field>
+            <field name="view_mode">tree,form,pivot,graph</field>
+        </record>
+
+
+        <!-- Menús en el módulo de Ventas -->
+        <menuitem parent="sale.sale_menu_root" id="menu_commission_worksheet" name="Comisiones" sequence="25" groups="sales_commission.group_commission_user"/>
+        <menuitem parent="menu_commission_worksheet" action="action_open_commission_worksheet" name="Comisiones" id="menu_comm_worksheet"/>
+
+        <!-- Menús en Finanzas -->
+        <menuitem parent="account.menu_finance" id="menu_commission_worksheet_invoice" name="Comisiones" sequence="25" groups="sales_commission.group_commission_user"/>
+        <menuitem parent="menu_commission_worksheet_invoice" action="action_open_commission_worksheet" name="Comisiones" id="menu_comm_worksheet_inv"/>
+    </data>
+</odoo>

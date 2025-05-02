@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="pos_order_line_order_type.ProductScreen" t-inherit="point_of_sale.ProductScreen" t-inherit-mode="extension">
+        <xpath expr="//ul[@t-if='line.pack_lot_lines']" position="after">
+            <t t-if="pos.config.enable_order_type">
+                <t t-if="line.get_line_order_type()">
+                    <li style="text-align: right;color:green;font-style: italic;cursor: pointer;">
+                        <t t-esc="line.get_line_order_type().name"/>
+                        <i class="fa fa-times remove_person" style="color:red;vertical-align: middle;padding-left: 5px;" t-on-click="() => this.removeOrderType(line)"/>
+                    </li>
+                </t>
+                <t t-if="!line.get_line_order_type()">
+                    <li style="text-align: right;">
+                        <i t-attf-class="fa fa-truck sale_delivery" style="color:orange" t-on-click="() => this.changeOrderType(line)"/>
+                    </li>
+                </t>
+            </t>
+        </xpath>
+    </t>
+
+    <t t-name="pos_order_line_order_type.OrderTypePopup">
+        <div class="popup popup-selection">
+            <div class="modal-header drag-handle">
+                <h4 class="modal-title"><t t-esc="props.title" /></h4>
+            </div>
+            <div style="display: inline-flex;padding: 20px;">
+                <div style="padding-top: 2px;font-weight: 600;padding-right: 20px;">Tipo de entrega: </div>
+                <div>
+                    <input list="delivery_type_list" t-on-change="(ev) => this.onChangeOrderType(ev.target.value)"/>
+                    <datalist id="delivery_type_list">
+                        <t t-foreach="props.list" t-as="item"  t-key ="item.id" t-att-data-product-id="item.id">
+                            <option t-att-value="item.label" t-att-id="item.id"/>
+                        </t>
+                    </datalist>
+                </div>
+            </div>
+            <footer class="footer modal-footer">
+                <div class="button confirm btn btn-lg btn-primary" t-on-click="confirm">
+                    <t t-esc="props.confirmText" />
+                </div>
+                <div class="button cancel btn btn-lg btn-secondary" t-on-click="cancel">
+                    <t t-esc="props.cancelText" />
+                </div>
+            </footer>
+        </div>
+    </t>
+
+</templates>

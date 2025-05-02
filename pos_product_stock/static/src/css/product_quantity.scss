@@ -1,0 +1,28 @@
+.dummy{
+background-color : #F0F8FF	;
+}
+.ribbon-wrapper {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: #0dbb0d;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.ribbon {
+  text-align: center;
+}
+
+.ribbon-wrapper.out-of-stock {
+  background: #ff4d4d; 
+  color: white;
+}
+
+.content-price-qty{
+  display: flex;
+  justify-content: space-between;
+}

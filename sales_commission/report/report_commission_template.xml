@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<template id="report_commission_template">
+		<t t-call="web.html_container">
+		<t t-call="web.external_layout">
+			<div class="page">
+				<center>
+				<h3><b>Detalles de comision</b></h3>
+				</center>
+				<br/>
+				<h3><b><span t-esc='doc.name'></span></b></h3><br/>
+				<table style="width:100%; border:2px solid grey">
+					<tr style="line-height:15px">
+						<th style="width:25%; border:2px solid grey; padding: 5px">Empleados</th>
+						<td style="width:25%; border:2px solid grey; padding: 5px">
+							<span>
+								<t t-set="employees" t-value="doc.employee_ids"/>
+								<t t-foreach="employees" t-as="emp">
+									<t t-esc="emp.name"/>
+									<t t-if="emp.id != employees[-1].id">, </t>
+								</t>
+							</span>
+							
+						</td>
+					</tr>
+					<tr style="line-height:15px">
+						<th style="width:25%; border:2px solid grey; padding: 5px">Fecha de Comisión</th>
+						<td style="width:25%; border:2px solid grey; padding: 5px">
+							<span t-esc="doc.start_date"/>
+						</td>
+					</tr>
+					<tr style="line-height:15px">
+						<th style="width:25%; border:2px solid grey; padding: 5px">Importe Total de Comisión</th>
+						<td style="width:25%; border:2px solid grey; padding: 5px">
+							<span t-esc="doc.total_commission_amt"/>
+						</td>
+					</tr>
+					<tr>
+						<th style="width:25%; border:2px solid grey; padding: 5px">Empresa</th>
+						<td style="width:25%; border:2px solid grey; padding: 5px">
+							<span t-esc="doc.company_id.name"/>
+						</td>
+					</tr>
+					<tr style="line-height:15px">
+						<th style="width:25%; border:2px solid grey; padding: 5px">Factura/s de Comisión</th>
+						<td style="width:25%; border:2px solid grey; padding: 5px">
+							<span>
+								<t t-set="invoices" t-value="doc.invoice_ids"/>
+								<t t-foreach="invoices" t-as="inv">
+									<t t-esc="inv.name"/>
+									<t t-if="inv.id != invoices[-1].id">, </t>
+								</t>
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<th style="width:25%; border:2px solid grey; padding: 5px">Estado de Comisión</th>
+						<td style="width:25%; border:2px solid grey; padding: 5px">
+							<t t-if="doc.state == 'draft'">
+								Borrador
+							</t>
+							<t t-elif="doc.state == 'open'">
+								Abierto
+							</t>
+							<t t-elif="doc.state == 'paid'">
+								Pagado
+							</t>
+							<t t-else="">
+								Desconocido
+							</t>
+						</td>
+					</tr>
+				</table>
+				
+				
+				
+				<br/><h3><b>Lineas de Comisión</b></h3><br/>
+				
+				<table style='width:100%; border:2px solid grey'>
+					<thead>
+						<tr style="line-height:15px; border: 2px solid grey;">
+							<th style='width:20%; border:2px solid grey; padding: 5px'>Producto</th>
+							<th style='width:20%; border:2px solid grey; padding: 5px'>Cantidad</th>
+							<th style='width:20%; border:2px solid grey; padding: 5px'>Precio Unitario</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr style="line-height:15px; border: 2px solid grey;" t-foreach="doc.commission_line_ids" t-as="commission">
+							<td style='width:20%; border:2px solid grey; padding: 5px'>
+								<span t-esc='commission.product_id.name'></span>
+							</td>
+							<td style='width:20%; border:2px solid grey; padding: 5px'>
+								<span t-esc='commission.quantity'></span>
+							</td>
+							<td style='width:20%; border:2px solid grey; padding: 5px'>
+								<span t-esc='commission.price_unit'></span>
+							</td>
+							<!-- <td style='width:20%; border:2px solid grey; padding: 5px'>
+								<span t-esc='commission.state'></span>
+							</td> -->
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			</t>
+			</t>
+		</template>
+
+		<template id="commission_template">
+			<t t-call="web.html_container">
+				<t t-foreach="docs" t-as="doc">
+					<t t-call="sales_commission.report_commission_template" />
+				</t>
+			</t>
+		</template>
+
+	</data>
+</openerp>

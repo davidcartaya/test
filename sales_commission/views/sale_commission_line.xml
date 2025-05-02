@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo> 
+    <data>
+        
+
+        <!-- Vista de árbol de las Líneas de Comisión -->
+        <record id="commission_lines_tree_view" model="ir.ui.view">
+            <field name="name">sale.commission.line.tree</field>
+            <field name="model">sale.commission.line</field>
+            <field name="arch" type="xml">
+                <tree string="Líneas de Comisión" create="false" edit="false">
+                    <field name="commission_sheet_id"/>
+                    <field name="product_id"/>
+                    <field name="quantity"/>
+                    <field name="price_unit"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista de formulario de las Líneas de Comisión -->
+        <record id="commission_lines_form_view" model="ir.ui.view">
+            <field name="name">sale.commission.line.form</field>
+            <field name="model">sale.commission.line</field>
+            <field name="arch" type="xml">
+                <form string="Líneas de Comisión" create="false" edit="false">
+                    <header>
+                        <!-- <field name="state" widget="statusbar"/> -->
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="commission_sheet_id"/>
+                                <field name="product_id"/>
+                    
+                            </group>
+                            <group>
+                                <field name="quantity"/>
+                                <field name="price_unit"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Acción para abrir las Líneas de Comisión -->
+        <record id="action_open_commission_lines" model="ir.actions.act_window">
+            <field name="name">Líneas de Comisión</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.commission.line</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- <menuitem parent="menu_commission_worksheet" action="action_open_commission_lines" name="Líneas de Comisión" id="menu_comm_lines"/> -->
+        <!-- <menuitem parent="menu_commission_worksheet_invoice" action="action_open_commission_lines" name="Líneas de Comisión" id="menu_comm_lines_inv"/> -->
+
+    </data>
+</odoo>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="product_category_form_view_inh" model="ir.ui.view" >
+		<field name="name">product.category.form.inh</field>
+		<field name="model">product.category</field>
+		<field name="inherit_id" ref="product.product_category_form_view"/>
+		<field name="arch" type="xml">
+			<xpath expr="//sheet" position="inside">
+				<notebook groups="sales_commission.group_commission_user">
+					<page groups="sales_commission.group_commission_user" string="Configuración de Comisión">
+						<div groups="sales_commission.group_commission_user">
+							<label for="commission_type" string="Tipo de Comisión"/>
+							<field name="commission_type"/>
+
+							<label for="amount_comission" string="Monto o porcentaje de Comisión"/>
+							<field name="amount_comission"/>
+
+							<label for="commission_assignment" string="Asignación de Comisión"/>
+							<field name="commission_assignment"/>
+						</div>
+					   	<field name="commission_ids">
+							<tree editable="bottom">
+								<field name="employee_id"/>
+								<field name="commission_type"/>
+								<field name="amount"/>
+								<field name="product_id" invisible="1"/>
+							</tree>
+					   </field>
+					</page>
+				</notebook>
+			</xpath>
+		</field>
+	</record>
+    </data>
+</odoo>
