@@ -1,0 +1,71 @@
+<odoo>
+    <data>
+        <record id="report_task_fleet_date_paperformat" model="report.paperformat">
+            <field name="name">Horizontal Wide Format</field>
+            <field name="default" eval="False" />
+            <field name="format">A4</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top" eval="5" />
+            <field name="margin_bottom" eval="5" />
+            <field name="margin_left" eval="5" />
+            <field name="margin_right" eval="5" />
+            <field name="page_height" eval="0" />
+            <field name="page_width" eval="0" />
+            <field name="dpi" eval="90" />
+        </record>
+
+        <!-- Plantilla QWeb para el reporte de tareas -->
+    <template id="report_task_fleet_date_pdf">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <!-- Crear subconjuntos de fechas en bloques de 8 -->
+                <t t-set="date_blocks" t-value="[date_range[i:i + 8] for i in range(0, len(date_range), 8)]" />
+
+                <!-- Iterar sobre los bloques -->
+                <t t-foreach="date_blocks" t-as="date_block">
+                    <table class="table table-bordered" style="margin-bottom: 20px; page-break-inside: avoid;">
+                        <thead>
+                            <tr>
+                                <th>Equipos/Materiales</th>
+                                <th>Matrícula</th>
+                                <th>Categoria</th>
+                                <th>Clasificación Vehículo</th>
+                                <t t-foreach="date_block" t-as="date">
+                                    <th><t t-esc="date"/></th>
+                                </t>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="fleet_data" t-as="fleet">
+                                <tr>
+                                    <td><t t-esc="fleet['model_id']" /></td>
+                                    <td><t t-esc="fleet['license_plate']" /></td>
+                                    <td><t t-esc="fleet['category_id']" /></td>
+                                    <td><t t-esc="fleet['vehicle_classification']" /></td>
+                                    <t t-foreach="date_block" t-as="date">
+                                        <td><t t-esc="fleet['dates'].get(date, '')" /></td>
+                                    </t>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                    <br /><br /> <!-- Espacio entre tablas -->
+                </t>
+            </div>
+        </t>
+    </template>
+
+
+
+        <record id="action_report_task_fleet_date_pdf" model="ir.actions.report">
+            <field name="name">Reporte de Tareas por Vehículos</field>
+            <field name="model">task.fleet.date.wizard</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">report_fleet_date.report_task_fleet_date_pdf</field>
+            <field name="report_file">report_fleet_date.report_task_fleet_date_pdf</field>
+            <field name="binding_model_id" ref="report_fleet_date.model_task_fleet_date_wizard" />
+            <field name="paperformat_id" ref="report_fleet_date.report_task_fleet_date_paperformat" />
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

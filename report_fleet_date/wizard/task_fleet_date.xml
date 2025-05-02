@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+
+        <!-- Vista para el Wizard -->
+        <record id="view_task_fleet_date_wizard" model="ir.ui.view">
+            <field name="name">task.fleet.date.wizard.form</field>
+            <field name="model">task.fleet.date.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Buscar Tareas por Vehículos y Fecha">
+                    <group>
+                        <field name="fleet_ids" widget="many2many_tags" required="1"/>
+                        <field name="date_start"/>
+                        <field name="date_end"/>
+                        <field name="xlsx_file" invisible="1"/>
+                        <field name="xlsx_file_name" invisible="1"/>
+                        <field name="format_type" widget="radio" required="1"/>
+                    </group> 
+                    <footer>
+                        <button string="Buscar Tareas" type="object" name="action_search_tasks" class="btn-primary"/>
+                        <button string="Cancelar" special="cancel" class="btn-secondary"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- Acción para abrir el Wizard -->
+        <record id="action_task_fleet_date_wizard" model="ir.actions.act_window">
+            <field name="name">Buscar Tareas por Vehículos</field>
+            <field name="res_model">task.fleet.date.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_task_fleet_date_wizard" name="Reporte flota por fecha"
+            parent="project.menu_main_pm" sequence="80" action="action_task_fleet_date_wizard"/>
+
+    </data>
+</odoo>
